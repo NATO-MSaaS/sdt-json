@@ -1,0 +1,73 @@
+= Service Description Template (SDT) in JSON format
+:toc:
+:sectnums:
+
+== Introduction
+
+The NATO M&S as a Service (MSaaS) concept identifies _discovery_ as a central activity in an Allied Framework for MSaaS (along with _composition_, _execution_ and _management_ of M&S services).
+
+A key element to discovery is to have metadata about M&S resources (such as name, purpose, accessibility, runtime requirements etc.).
+
+After carefully analysing existing metadata standards, the MSG-136 working group suggested possible metadata elements for an M&S domain specific metadata scheme. This is known as the *MSaaS Service Description Template (SDT)*.
+
+Although not formally standardized, the SDT has proven useful in many tests and experimentation events.
+
+This document gives an overview of the current state of the SDT and its JSON representation.
+
+
+== Level 1 elements
+
+The SDT JSON uses the following top-level objects:
+
+[cols="1,2,1"]
+|===
+|JSON object |Description |Mandatory?
+
+|coreInformation
+|Basic metadata about an M&S resource.
+|Yes.
+
+|deploymentInformation
+|Information how to deploy an M&S service (e.g., hardware requirements, runtime environments).
+|No.
+
+|...
+|Project- or application-specific extensions are possible.
+|No.
+
+|===
+
+Details are defined in the JSON schema that is provided in file link:sdt-toplevel.schema.json[sdt-toplevel.schema.json].
+
+
+== Level 2 elements
+
+=== coreInformation
+
+The `coreInformation` section includes basic metadata about an M&S resource.
+
+Details are defined in the JSON schema that is provided in file link:sdt-coreInformation.schema.json[sdt-coreInformation.schema.json].
+
+.JSON example:
+[,json]
+----
+include::sdt-coreInformation.example.json[]
+----
+
+
+=== deploymentInformation
+
+The `deploymentInformation` section includes information required to deploy (and execute) an M&S resource.
+
+Details are defined in the JSON schema that is provided in file link:sdt-deploymentInformation.schema.json[sdt-deploymentInformation.schema.json].
+
+.JSON example:
+[,json]
+----
+include::sdt-deploymentInformation.example.json[]
+----
+
+
+== Custom extensions
+
+Each project is free to include project- or application-specific extensions for M&S resources as required.

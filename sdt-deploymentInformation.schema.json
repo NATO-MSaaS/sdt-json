@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sto.nato.int/sdt-json/v1/sdt-deploymentInformation.schema.json",
+  "title": "JSON representation of SDT deploymentInformation",
+  "description": "JSON representation of SDT deploymentInformation",
+  "type": "object",
+  "properties": {
+    "deploymentInformation": {
+      "type": "object",
+      "properties": {
+        "targetEngine": {
+          "description": "Specifies the target engine (runtime) to execute this M&S resource.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Prepar3D",
+            "Unreal",
+            "Epic",
+            "VR-Forces"
+          ]
+        },
+        "targetEngineVersion": {
+          "description": "Specifies the version of the target engine (runtime) to execute this M&S resource.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "4.1",
+            "2022.1"
+          ]
+        },
+        "configurationFiles": {
+          "description": "Specifies the configuration files required to deploy the M&S resource. Ideally, these are URLs to files that can be retrieved through the RDS interface of the registry.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "examples": [
+            "https://www.files.com/1234",
+            "https://www.files.com/23456"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "deploymentInformation"
+  ]
+}

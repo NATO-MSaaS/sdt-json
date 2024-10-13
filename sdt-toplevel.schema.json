@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://sto.nato.int/sdt-json/v1/sdt-toplevel.schema.json",
+  "title": "JSON representation of M&S resource metadata",
+  "description": "Representation of M&S resource metadata",
+  "type": "object",
+  "properties": {
+    "resources": {
+      "description": "List of resources",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/resources"
+      }
+    }
+  },
+  "required": [
+    "resources"
+  ],
+  "definitions": {
+    "resources": {
+      "type": "object",
+      "properties": {
+        "coreInformation": {"$ref": "sdt-coreInformation"},
+        "deploymentInformation": {"$ref": "sdt-deploymentInformation"}
+      },
+      "required": [
+        "coreInformation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sto.nato.int/sdt-json/v1/sdt-coreInformation.schema.json",
+  "title": "JSON representation of SDT coreInformation",
+  "description": "JSON representation of SDT coreInformation",
+  "type": "object",
+  "properties": {
+    "coreInformation": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "description": "Unique identifier of the resource. The uid is created by a registry for each resource (as defined by the RDS specification). Note: The uid must not be part of the payload in POST/PATCH/PUT requests. If an uid is included in the payload, it is a bad request and the registry will respond with an error code/message!",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "f5f45d90-7944-445f-b033-72371e1e7ed2",
+            "4035"
+          ]
+        },
+        "name": {
+          "description": "Name of the resource. Name must not be empty. Resource names are not required to be unique (only the uid MUST be unique), i.e. multiple resources with the same name (but different uid) are feasible!",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Convoy Scenario",
+            "Weapon Effect Service"
+          ]
+        },
+        "description": {
+          "description": "Detailed description of the resource",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "This is a scenario for a convoy with 3 vehicles that get ambushed.",
+            "The Weapon Effect Service (WES) calculates effects due to weapon engagement."
+          ]
+        },
+        "owner": {
+          "description": "Owner of the resource. For example, the username or id of the person that has created this resource.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "homersimpson",
+            "John Doe"
+          ]
+        },
+        "version": {
+          "description": "The version number/information of the resource.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "2.0.1",
+            "2024 Ultimate Edition"
+          ]
+        },
+        "icon": {
+          "description": "Base64-encoded image that may be displayed when presenting this resource to a user through a graphical user interface (e.g., web application).",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "iVBORw0KGgoAAAAN..."
+          ]
+        },
+        "resourceType": {
+          "description": "Type of the resource. As RDS allows to retrieve information about different types of resources, this information specifies the actual resource type.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "scenario",
+            "M&S service"
+          ]
+        },
+        "url": {
+          "description": "URL for accessing the resource.",
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "https://server.com/rds/v1/resource/registry-0123-abcd-6543",
+            "https://localhost:8080/show/resource?uid=4035"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "coreInformation"
+  ]
+}

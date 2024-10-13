@@ -1,0 +1,10 @@
+{
+  "deploymentInformation": {
+    "targetEngine": "Prepar3D",
+    "targetEngineVersion": "4.0",
+    "configurationFiles": [
+      "https://localhost/rest/rds/v1/resources/4035/file1",
+      "https://localhost/rest/rds/v1/resources/4035/file2"
+    ]
+  }
+}
