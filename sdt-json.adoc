@@ -31,7 +31,7 @@ The SDT JSON uses the following top-level objects:
 |Information how to deploy an M&S service (e.g., hardware requirements, runtime environments).
 |No.
 
-|...
+|_<application-specific>_
 |Project- or application-specific extensions are possible.
 |No.
 
